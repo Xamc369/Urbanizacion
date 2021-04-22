@@ -13,4 +13,8 @@
     <Folder Include="Data\Entities\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Urbanizacion.Common\Urbanizacion.Common.csproj" />
+  </ItemGroup>
+
 </Project>
