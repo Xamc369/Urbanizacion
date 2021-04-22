@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Vereyon.Web;
+
 
 namespace Urbanizacion.Web.Helpers
 {
@@ -16,20 +16,18 @@ namespace Urbanizacion.Web.Helpers
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<Userstbl> _signInManager;
         private readonly DataContext _datacontext;
-        private readonly IFlashMessage _flashMessage;
+        
 
         public UserHelper(
             DataContext datacontext,
             UserManager<Userstbl> userManager,
             RoleManager<IdentityRole> roleManager,
-            SignInManager<Userstbl> signInManager,
-            IFlashMessage flashMessage)
+            SignInManager<Userstbl> signInManager)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _signInManager = signInManager;
-            _datacontext = datacontext;
-            _flashMessage = flashMessage;
+
         }
 
         //eliminar un propietario

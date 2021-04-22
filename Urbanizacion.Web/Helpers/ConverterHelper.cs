@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Vereyon.Web;
+
 
 namespace Urbanizacion.Web.Helpers
 {
@@ -16,16 +16,15 @@ namespace Urbanizacion.Web.Helpers
     {
         private readonly DataContext _dataContext1;
         private readonly ICombosHelper _combosHelper;
-        private readonly IFlashMessage _flashMessage;
+        
 
 
         public ConverterHelper(DataContext dataContext1,
-            ICombosHelper combosHelper,
-            IFlashMessage flashMessage)
+            ICombosHelper combosHelper)
         {
             _dataContext1 = dataContext1;
             _combosHelper = combosHelper;
-            _flashMessage = flashMessage;
+            
         }
 
         public async Task<Vehiculostbl> ToVehiculoAsync(VehiculoViewModel model, string path, bool IsNew)
