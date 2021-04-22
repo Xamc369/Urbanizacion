@@ -1,0 +1,52 @@
+﻿@model Urbanizacion.Web.Models.EgresoViewModel
+
+@{ ViewData["Title"] = "Edit"; }
+
+<h2>Editar</h2>
+
+<h4>Egresos</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group">
+                <label asp-for="Egr_FechadePago" class="control-label"></label>
+                <input asp-for="Egr_FechadePago" class="form-control" />
+                <span asp-validation-for="Egr_FechadePago" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AnioId" class="control-label"></label>
+                <select asp-for="AnioId" asp-items="Model.Anios1" class="form-control"></select>
+                <span asp-validation-for="AnioId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MesId" class="control-label"></label>
+                <select asp-for="MesId" asp-items="Model.Meses1" class="form-control"></select>
+                <span asp-validation-for="MesId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoId1" class="control-label"></label>
+                <select asp-for="TipoId1" asp-items="Model.Tipos1" class="form-control"></select>
+                <span asp-validation-for="MesId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Egr_Valor" class="control-label"></label>
+                <input asp-for="Egr_Valor" class="form-control" />
+                <span asp-validation-for="Egr_Valor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Modificar" class="btn btn-default" />
+                <div class="form-group">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
