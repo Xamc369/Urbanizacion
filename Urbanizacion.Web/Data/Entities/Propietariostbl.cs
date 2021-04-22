@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using Prados.Web.Data.Entities;
+using Urbanizacion.Web.Data.Entities;
 
-namespace Prados.Web.Data.Entities
+namespace Urbanizacion.Web.Data.Entities
 {
     public class Propietariostbl
     {

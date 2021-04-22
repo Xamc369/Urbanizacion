@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Prados.Web.Data.Entities
+namespace Urbanizacion.Web.Data.Entities
 {
     public class Pagostbl
     {
@@ -36,7 +36,7 @@ namespace Prados.Web.Data.Entities
         //TODO: replace the correct URL for the image
         public string ImageFullPath => string.IsNullOrEmpty(ImageUrl)
             ? null
-            : $"https://prados.azurewebsites.net{ImageUrl.Substring(1)}";
+            : $"https://Urbanizacion.azurewebsites.net{ImageUrl.Substring(1)}";
 
         public int Borr_Id{get; set;}
 

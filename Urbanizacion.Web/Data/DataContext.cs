@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Prados.Web.Data.Entities;
+using Urbanizacion.Web.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
-using Prados.Web.Models;
+using Urbanizacion.Web.Models;
 
-namespace Prados.Web.Data
+namespace Urbanizacion.Web.Data
 {
     public class DataContext : IdentityDbContext<Userstbl>
     {
@@ -35,7 +35,7 @@ namespace Prados.Web.Data
         public DbSet<Vehiculostbl> Vehiculostbls { get; set; }
         public DbSet<Egresostbl> Egresostbls { get; set; }
         public DbSet<Saldostbl> Saldostbls { get; set; }
-        public DbSet<Prados.Web.Data.Entities.TiposPagotbl> TiposPagotbl { get; set; }
+        public DbSet<TiposPagotbl> TiposPagotbl { get; set; }
         public DbSet<TiposPagotbl> TiposPagotbls { get; set; }
         public DbSet<TiposGastotbl> TiposGastotbls { get; set; }
         public DbSet<Noticiastbl> Noticiastbls { get; set; }
@@ -68,13 +68,13 @@ namespace Prados.Web.Data
                 .HasIndex(t => t.Tip_Descripcion)
                 .IsUnique();
 
-            //builder.HasSequence<int>("", schema: "UrbPrados")
+            //builder.HasSequence<int>("", schema: "UrbUrbanizacion")
             //.StartsAt(0)
             //.IncrementsBy(1);
 
             //builder.Entity<Pagostbl>()
             //    .Property(o => o.Borr_Id)
-            //    .HasDefaultValueSql("NEXT VALUE FOR UrbPrados.UrbPrados");
+            //    .HasDefaultValueSql("NEXT VALUE FOR UrbUrbanizacion.UrbUrbanizacion");
         }
 
 
