@@ -4,15 +4,23 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Urbanizacion.Web.Data;
 using Urbanizacion.Web.Models;
 
 namespace Urbanizacion.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly DataContext _context;
+
+        public HomeController(DataContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            return View(_context.Noticiastbls);
         }
 
         public IActionResult About()
@@ -39,5 +47,13 @@ namespace Urbanizacion.Web.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [Route("error/404")]
+        public IActionResult Error404()
+        {
+            return View();
+        }
+
+
     }
 }
